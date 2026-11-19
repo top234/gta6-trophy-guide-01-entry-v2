@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide — All 55 Trophies, Roadmap &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+  <h1>GTA VI Trophy Guide</h1>
+  <p class="lede">Every trophy, a guide in plain words, and a tracker that remembers what you have earned — all offline. One playthrough, no online trophies, about 200 hours to the Platinum.</p>
+  <div class="progress-wrap" aria-label="Overall progress">
+    <div class="progress-line"><strong id="progressText">0 of 55 earned</strong><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div id="progressFill" style="width:0%"></div></div>
+  </div>
+  <nav class="views" aria-label="Views">
+    <button type="button" data-view="all" class="view-btn active">Checklist</button>
+    <button type="button" data-view="missable" class="view-btn">Missable <span id="missableCount" class="pill">1</span></button>
+    <button type="button" data-view="roadmap" class="view-btn">Roadmap to Platinum</button>
+  </nav>
+</header>
+
+<main>
+  <section id="stats" class="stats" aria-label="Stats dashboard">
+    <div class="stat"><span class="stat-num" id="statEarned">0 / 55</span><span class="stat-label">trophies earned</span></div>
+    <div class="stat"><span class="stat-num" id="statTime">≈ 172 h left</span><span class="stat-label">estimated time remaining</span></div>
+    <div class="stat"><span class="stat-num" id="statMissable">1 left</span><span class="stat-label">missable trophies unearned</span></div>
+    <div class="stat"><span class="stat-num" id="statGrade">0 / 1</span><span class="stat-label">platinum progress by grade</span></div>
+    <div class="grade-bars" id="gradeBars" aria-label="Progress by grade"></div>
+  </section>
+
+  <section id="roadmapStrip" class="roadmap-strip" aria-label="Roadmap at a glance">
+    <h2>The road to the Platinum in 8 stages</h2>
+    <ol id="stageChips" class="stage-chips"></ol>
+    <p class="strip-note">Full stage-by-stage plan with every trophy it unlocks: open the <strong>Roadmap to Platinum</strong> view above.</p>
+  </section>
+
+  <section id="missableBanner" class="missable-banner" aria-label="Missable warning">
+    <h2>⚠ One trophy can be missed</h2>
+    <p><strong>Positive Mental Attitude</strong> — one meditation spot, at Jason's house, is only available during <strong>Chapter 1</strong>. There is no mission replay. Meditate there before Chapter 1 ends, and keep a manual save at the start of every chapter.</p>
+    <button type="button" id="goMissable">See the Missable view</button>
+  </section>
+
+  <section id="roadmapView" class="roadmap-view" hidden aria-label="Platinum roadmap"></section>
+
+  <section id="checklistView" aria-label="Trophy checklist">
+    <div class="toolbar">
+      <label class="search">Search <input id="search" type="search" placeholder="Name, description, guide or tip…" autocomplete="off"></label>
+      <label>Kind
+        <select id="kind">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="side">Side missions</option>
+          <option value="activity">Activities</option>
+          <option value="collectible">Collectibles</option>
+          <option value="crime">Crime</option>
+          <option value="money">Money &amp; lifestyle</option>
+          <option value="other">Other</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Difficulty
+        <select id="difficulty">
+          <option value="all">All difficulties</option>
+          <option value="1">★ Easy</option>
+          <option value="2">★★ Moderate</option>
+          <option value="3">★★★ Hard</option>
+          <option value="4">★★★★ Very Hard</option>
+          <option value="5">★★★★★ Extreme</option>
+        </select>
+      </label>
+      <label>Status
+        <select id="earned">
+          <option value="all">Earned &amp; unearned</option>
+          <option value="earned">Earned</option>
+          <option value="unearned">Unearned</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort">
+          <option value="roadmap">Roadmap order</option>
+          <option value="name">Name A–Z</option>
+          <option value="grade">Grade</option>
+          <option value="difficulty">Difficulty (hardest first)</option>
+        </select>
+      </label>
+      <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+      <label class="check"><input id="spoiler" type="checkbox"> Hide story spoilers until earned</label>
+      <button id="expandAll" type="button">Show all guides</button>
+      <button id="export" type="button">Export progress</button>
+      <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+    </div>
+    <p id="resultCount" class="result-count" role="status"></p>
+    <p id="emptyNote" class="empty-note" hidden></p>
+    <div id="cards" class="cards"></div>
+  </section>
+</main>
+
+<footer>
+  <h2>About this guide</h2>
+  <p><strong>Rarity:</strong> no published rarity figures exist yet for GTA VI — the game launched 19 November 2026 and the trackers have not published rarity data. Every card therefore shows its grade only; no percentage has been invented.</p>
+  <p><strong>Difficulty and times</strong> are the maker's estimates, labelled on each card. Story trophies show “across the story” instead of a separate time, so the time-remaining total is not double-counted. PowerPyx rates the whole set 4 out of 10 and about 200 hours to the Platinum.</p>
+  <p><strong>Sources:</strong> trophy names and descriptions are the official PlayStation list as published 18 November 2026; guides are written in the maker's own words from <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx</a>, <a href="https://www.planetgta6.com/en/gta-6-trophies/">Planet GTA 6</a>, <a href="https://outputlag.com/guides/gta-6-trophy-list/">Output Lag</a> and <a href="https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/">KeenGamer</a>, each cited beside the guide it supports. No Rockstar artwork or logo is used; the look is the maker's own.</p>
+  <p><strong>Your progress</strong> is saved only in this browser (localStorage). Export it to a file to back it up or move it to another browser.</p>
+</footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
